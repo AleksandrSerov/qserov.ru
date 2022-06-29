@@ -1,7 +1,7 @@
 {
 	"name": "ohmystart",
 	"version": "1.0.0",
-	"description": "The easiest way to start up react app from scratch",
+	"description": "",
 	"keywords": [],
 	"homepage": "https://github.com/AleksandrSerov/ohmystart#readme",
 	"bugs": {
@@ -14,22 +14,22 @@
 		"url": "git+https://github.com/AleksandrSerov/ohmystart.git"
 	},
 	"scripts": {
-		"start": "tsc --noEmit --watch & parcel ./src/index.html --port 8080 --open --watch-for-stdin",
-		"test": "yarn test:unit && yarn test:e2e",
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
 		"test:unit": "jest",
-		"test:e2e": "start-server-and-test start :8080 \"cypress run\"",
-		"test:e2e:open": "start-server-and-test start :8080 \"cypress open\"",
+		"test:e2e": "start-server-and-test start :3000 \"cypress run\"",
+		"test:e2e:open": "start-server-and-test start :3000 \"cypress open\"",
 		"lint": "yarn lint:css && yarn lint:scripts && yarn ts:check",
 		"lint:css": "stylelint ./src/**/*.css",
 		"ts:check": "tsc --noemit",
 		"lint:scripts": "eslint \"**/*.{js,jsx,ts,tsx}\" --ext .js,.jsx,.ts,.tsx",
 		"format": "prettier-eslint --write \"./{src,cypress}/**/*.{ts,tsx,css}\"",
-		"build": "yarn ts:check && rm -rf dist && parcel build --no-source-maps ./src/index.html",
 		"postinstall": "npx simple-git-hooks"
 	},
 	"dependencies": {
 		"classnames": "^2.3.1",
-		"parcel": "^2.2.1",
+		"next": "^12.1.6",
 		"react": "18.0.0",
 		"react-dom": "18.0.0"
 	},
