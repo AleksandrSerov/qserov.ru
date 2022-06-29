@@ -21,8 +21,8 @@
 		"test:e2e": "start-server-and-test start :3000 \"cypress run\"",
 		"test:e2e:open": "start-server-and-test start :3000 \"cypress open\"",
 		"lint": "yarn lint:css && yarn lint:scripts && yarn ts:check",
-		"lint:css": "stylelint ./src/**/*.css",
-		"ts:check": "tsc --noemit",
+		"lint:css": "stylelint ./**/*.css",
+		"ts:check": "tsc --noEmit",
 		"lint:scripts": "eslint \"**/*.{js,jsx,ts,tsx}\" --ext .js,.jsx,.ts,.tsx",
 		"format": "prettier-eslint --write \"./{src,cypress}/**/*.{ts,tsx,css}\"",
 		"postinstall": "npx simple-git-hooks"

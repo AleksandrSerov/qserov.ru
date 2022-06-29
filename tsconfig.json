@@ -5,7 +5,7 @@
 		"strict": true,
 		"target": "es5",
 		"jsx": "preserve",
-		"baseUrl": "./src",
+		"baseUrl": ".",
 		"plugins": [
 			{
 				"name": "typescript-plugin-css-modules"
@@ -23,6 +23,6 @@
 		"isolatedModules": true,
 		"allowJs": true
 	},
-	"include": ["src/**/*", "pages", "components", "typings", "utils"],
+	"include": ["pages", "components", "typings", "utils", "next-env.d.ts"],
 	"exclude": ["node_modules"]
 }
