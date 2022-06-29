@@ -5,7 +5,6 @@
 		"strict": true,
 		"target": "es5",
 		"jsx": "preserve",
-		"baseUrl": ".",
 		"plugins": [
 			{
 				"name": "typescript-plugin-css-modules"
