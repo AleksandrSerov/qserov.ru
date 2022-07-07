@@ -1,4 +1,3 @@
 .testClass {
-	/* TODO: linter doesn't show error on unknown css property */
-	marginbottom: 10px;
+	height: 2000px;
 }
