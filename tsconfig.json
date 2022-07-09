@@ -23,12 +23,13 @@
 		"allowJs": true
 	},
 	"include": [
-		"pages/**/*.tsx",
-		"pages/**/*.ts",
-		"components",
-		"typings",
-		"utils",
-		"next-env.d.ts"
+		"./pages/**/*.tsx",
+		"./pages/**/*.ts",
+		"./components/**/*.ts",
+		"./components/**/*.tx",
+		"./typings",
+		"./utils",
+		"./next-env.d.ts"
 	],
 	"exclude": ["node_modules"]
 }
