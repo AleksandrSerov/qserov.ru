@@ -7,7 +7,9 @@ import styles from './index.module.css';
 const Index: React.FC = () => (
 	<React.Fragment>
 		<Header />
-		<h1 className={ styles.header }>Hello world!</h1>
+		<div>
+			<h1 className={ styles.header }>Hello world!</h1>
+		</div>
 	</React.Fragment>
 );
 
