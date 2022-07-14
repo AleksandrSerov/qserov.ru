@@ -26,7 +26,7 @@
 		"./pages/**/*.tsx",
 		"./pages/**/*.ts",
 		"./components/**/*.ts",
-		"./components/**/*.tx",
+		"./components/**/*.tsx",
 		"./typings",
 		"./utils",
 		"./next-env.d.ts"

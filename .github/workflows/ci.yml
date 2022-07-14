@@ -1,11 +1,16 @@
 name: CI
 on: [push]
 jobs:
-  prepare:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-      - run: yarn install --frozen-lockfile
+    prepare:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: '16'
+            - run: yarn install --frozen-lockfile
+    lint:
+        needs: prepare
+        runs-on: ubuntu-latest
+        steps:
+          - run: yarn lint
