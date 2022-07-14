@@ -1,7 +1,8 @@
 name: CI
 on: [push]
 jobs:
-    lint:
+    all:
+        name: do all work
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -9,16 +10,16 @@ jobs:
               with:
                   node-version: '16'
             - name: Prepare
-            - run: yarn install --frozen-lockfile
+              run: yarn install --frozen-lockfile
 
             - name: Build
-            - run: yarn build
+              run: yarn build
 
             - name: Linters
-            - run: yarn lint
+              run: yarn lint
 
             - name: Test-unit
-            - run: yarn test:unit
+              run: yarn test:unit
 
             - name: Test-e2e
-            - run: yarn test:e2e
+              run: yarn test:e2e
