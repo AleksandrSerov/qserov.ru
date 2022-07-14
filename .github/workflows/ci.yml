@@ -1,21 +1,24 @@
 name: CI
 on: [push]
 jobs:
-    prepare:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: '16'
-            - run: yarn install --frozen-lockfile
     lint:
-        needs: prepare
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v3
           - uses: actions/setup-node@v3
             with:
                 node-version: '16'
+          - name: Prepare
           - run: yarn install --frozen-lockfile
+
+          - name: Build
+          - run: yarn build
+
+          - name: Linters
           - run: yarn lint
+
+          - name: Test-unit
+          - run: yarn test:unit
+
+          - name: Test-e2e
+          - run: yarn test:e2e
