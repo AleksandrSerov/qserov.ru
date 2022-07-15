@@ -1,9 +1,11 @@
 name: CI
 on: [push]
 jobs:
-    all:
-        name: do all work
+    ci:
         runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                step: ['lint', 'build', 'tests:unit', 'tests:e2e']
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
@@ -12,14 +14,26 @@ jobs:
             - name: Prepare
               run: yarn install --frozen-lockfile
 
-            - name: Build
-              run: yarn build
+            - name: ${{matrix.step}}
+              run: yarn ${{matrix.step}}
+    # lint-test-build:
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - uses: actions/checkout@v3
+    #         - uses: actions/setup-node@v3
+    #           with:
+    #               node-version: '16'
+    #         - name: Prepare
+    #           run: yarn install --frozen-lockfile
 
-            - name: Linters
-              run: yarn lint
+    #         - name: Build
+    #           run: yarn build
 
-            - name: Test-unit
-              run: yarn test:unit
+    #         - name: Linters
+    #           run: yarn lint
 
-            - name: Test-e2e
-              run: yarn test:e2e
+    #         - name: Test-unit
+    #           run: yarn test:unit
+
+    #         - name: Test-e2e
+    #           run: yarn test:e2e
