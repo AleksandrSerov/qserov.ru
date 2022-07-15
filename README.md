@@ -1,5 +1,7 @@
 # ohmystart
 
+![CI](https://github.com/AleksandrSerov/gserov.ru/actions/workflows/ci.yml/badge.svg)
+
 ## How to start
 ```bash
 git clone git@github.com:AleksandrSerov/ohmystart.git
