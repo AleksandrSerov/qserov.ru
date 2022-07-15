@@ -1,6 +1,6 @@
 # ohmystart
 
-![CI](https://github.com/AleksandrSerov/gserov.ru/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/AleksandrSerov/qserov.ru/actions/workflows/ci.yml/badge.svg)
 
 ## How to start
 ```bash
